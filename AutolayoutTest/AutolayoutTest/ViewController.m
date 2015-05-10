@@ -45,13 +45,10 @@
     
     self.constraintArray = @[self.space1, self.space2, self.space3];
     self.labelArray = @[self.label1, self.label2, self.label3];
-    
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)didTap:(UITapGestureRecognizer *)sender {
