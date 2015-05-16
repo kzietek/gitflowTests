@@ -117,7 +117,7 @@
         <!--Item 2-->
         <scene sceneID="nkD-5Z-sBB">
             <objects>
-                <viewController id="8MF-aW-r96" sceneMemberID="viewController">
+                <viewController id="8MF-aW-r96" customClass="DownloadJsonViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WKi-x1-e9n"/>
                         <viewControllerLayoutGuide type="bottom" id="Nxh-8n-Lh0"/>
@@ -137,24 +137,36 @@
                                 <state key="normal" title="Download &amp; show">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionDownloadAndShow:" destination="8MF-aW-r96" eventType="touchUpInside" id="Xra-sR-ufc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-kT-zVL">
                                 <rect key="frame" x="164" y="230" width="140" height="30"/>
                                 <state key="normal" title="Show from cache">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionShowFromCache:" destination="8MF-aW-r96" eventType="touchUpInside" id="3pG-C3-R46"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mr-0b-8bv">
                                 <rect key="frame" x="16" y="268" width="140" height="30"/>
                                 <state key="normal" title="Do best u can">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionDoYourBest:" destination="8MF-aW-r96" eventType="touchUpInside" id="fea-jU-pkJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27V-19-Pjb">
                                 <rect key="frame" x="164" y="268" width="140" height="30"/>
                                 <state key="normal" title="Clear cache">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionClearCache:" destination="8MF-aW-r96" eventType="touchUpInside" id="cKc-A1-XNx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,6 +190,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="cf9-1N-nAz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="btnClearCache" destination="27V-19-Pjb" id="7gN-Hl-dSX"/>
+                        <outlet property="btnDoYourBest" destination="6Mr-0b-8bv" id="vCx-YZ-B2o"/>
+                        <outlet property="btnDownloadAndShow" destination="r8A-kL-b54" id="6n6-b7-cIA"/>
+                        <outlet property="btnShowFromCache" destination="NyJ-kT-zVL" id="AWX-CX-SUw"/>
+                        <outlet property="vImage" destination="0dl-DX-l6g" id="vfS-hS-X2E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHy-7p-816" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
