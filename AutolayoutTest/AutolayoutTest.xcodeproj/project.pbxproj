@@ -16,6 +16,7 @@
 		47719F6F1AFFDDC4001BBCCF /* AutolayoutTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47719F6E1AFFDDC4001BBCCF /* AutolayoutTestTests.m */; };
 		477F578B1B07C5B30077E447 /* DownloadJsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F578A1B07C5B30077E447 /* DownloadJsonViewController.m */; };
 		477F57901B07CAF10077E447 /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F578F1B07CAF10077E447 /* Language.m */; };
+		477F57941B07CD5C0077E447 /* LangzeeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F57931B07CD5C0077E447 /* LangzeeAPI.m */; };
 		FA2660543A83E55F6CF36046 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28856101943BFBBCE122347F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		477F578A1B07C5B30077E447 /* DownloadJsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadJsonViewController.m; sourceTree = "<group>"; };
 		477F578E1B07CAF10077E447 /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Language.h; path = Model/Language.h; sourceTree = "<group>"; };
 		477F578F1B07CAF10077E447 /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Language.m; path = Model/Language.m; sourceTree = "<group>"; };
+		477F57921B07CD5C0077E447 /* LangzeeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LangzeeAPI.h; path = Network/LangzeeAPI.h; sourceTree = "<group>"; };
+		477F57931B07CD5C0077E447 /* LangzeeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LangzeeAPI.m; path = Network/LangzeeAPI.m; sourceTree = "<group>"; };
 		68E3EC171E28390BD8B96405 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +97,7 @@
 		47719F511AFFDDC3001BBCCF /* AutolayoutTest */ = {
 			isa = PBXGroup;
 			children = (
+				477F57911B07CCA30077E447 /* Network */,
 				477F578D1B07CA8A0077E447 /* Model */,
 				47719F561AFFDDC3001BBCCF /* AppDelegate.h */,
 				47719F571AFFDDC3001BBCCF /* AppDelegate.m */,
@@ -142,6 +146,15 @@
 				477F578F1B07CAF10077E447 /* Language.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		477F57911B07CCA30077E447 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				477F57921B07CD5C0077E447 /* LangzeeAPI.h */,
+				477F57931B07CD5C0077E447 /* LangzeeAPI.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		5CE813DAFFFC58CFF53B26BB /* Pods */ = {
@@ -300,6 +313,7 @@
 				477F57901B07CAF10077E447 /* Language.m in Sources */,
 				477F578B1B07C5B30077E447 /* DownloadJsonViewController.m in Sources */,
 				47719F5B1AFFDDC3001BBCCF /* ViewController.m in Sources */,
+				477F57941B07CD5C0077E447 /* LangzeeAPI.m in Sources */,
 				47719F581AFFDDC3001BBCCF /* AppDelegate.m in Sources */,
 				47719F551AFFDDC3001BBCCF /* main.m in Sources */,
 			);
