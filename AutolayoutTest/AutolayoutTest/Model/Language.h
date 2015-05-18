@@ -10,8 +10,8 @@
 
 @interface Language : JSONModel
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger languageId;
 @property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSString* language_image;
+@property (nonatomic, strong) NSString* languageImage;
 
 @end
