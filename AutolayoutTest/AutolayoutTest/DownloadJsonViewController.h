@@ -10,6 +10,8 @@
 
 @interface DownloadJsonViewController : UIViewController
 
+@property(nonatomic,weak) IBOutlet UIImageView *vImage;
+
 - (void)failure:(NSString*)displayText;
 
 @end

@@ -9,10 +9,9 @@
 #import "DownloadJsonViewController.h"
 #import "LangzeeAPI.h"
 #import "Language.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DownloadJsonViewController ()
-
-@property(nonatomic,weak) IBOutlet UIImageView *vImage;
 
 @end
 
@@ -34,7 +33,12 @@
             return;
         }
         
-        ;
+        Language *firstLang = [langs firstObject];
+        NSString *baseURL = @"http://langzee.jojomob.vot.pl/media/";
+        NSURL *imageUrl = [NSURL URLWithString:[baseURL stringByAppendingPathComponent:firstLang.languageImage]];
+        [weakSelf.vImage sd_setImageWithURL:imageUrl];
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [weakSelf failure:@"Network error."];
     }];
@@ -49,7 +53,7 @@
 }
 
 - (IBAction)actionClearCache:(UIButton *)sender {
-    
+    self.vImage.image = nil;
 }
 
 #pragma mark - Display
