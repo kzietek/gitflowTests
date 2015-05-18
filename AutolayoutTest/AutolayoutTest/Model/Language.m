@@ -10,11 +10,12 @@
 
 @implementation Language
 
-+ (JSONKeyMapper*)keyMapper {
-    return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"languageId" : @"id",
-                                                       @"languageImage": @"language_image"
-                                                       }];
-}
+//+ (JSONKeyMapper*)keyMapper {
+//    return [[JSONKeyMapper alloc] initWithDictionary:@{
+//                                                       @"languageId" : @"id",
+//                                                       @"name" : @"name" ,
+//                                                       @"languageImage": @"language_image"
+//                                                       }];
+//}
 
 @end

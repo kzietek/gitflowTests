@@ -12,6 +12,6 @@
 
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSString* languageImage;
+@property (nonatomic, strong) NSString* language_image;
 
 @end

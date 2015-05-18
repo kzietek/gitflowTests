@@ -191,10 +191,6 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="cf9-1N-nAz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="btnClearCache" destination="27V-19-Pjb" id="7gN-Hl-dSX"/>
-                        <outlet property="btnDoYourBest" destination="6Mr-0b-8bv" id="vCx-YZ-B2o"/>
-                        <outlet property="btnDownloadAndShow" destination="r8A-kL-b54" id="6n6-b7-cIA"/>
-                        <outlet property="btnShowFromCache" destination="NyJ-kT-zVL" id="AWX-CX-SUw"/>
                         <outlet property="vImage" destination="0dl-DX-l6g" id="vfS-hS-X2E"/>
                     </connections>
                 </viewController>

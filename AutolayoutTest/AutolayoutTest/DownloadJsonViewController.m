@@ -7,6 +7,8 @@
 //
 
 #import "DownloadJsonViewController.h"
+#import "LangzeeAPI.h"
+#import "Language.h"
 
 @interface DownloadJsonViewController ()
 
@@ -20,6 +22,22 @@
 
 - (IBAction)actionDownloadAndShow:(UIButton *)sender {
     
+    __weak typeof(self) weakSelf = self;
+    
+    [LangzeeAPI getCountriesWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSArray *langs = [Language arrayOfModelsFromDictionaries:responseObject error:&error];
+        
+        if (error) {
+            NSString *msg = [NSString stringWithFormat:@"Failure during JSON conversion.\nError: %@", error.description];
+            [weakSelf failure:msg];
+            return;
+        }
+        
+        ;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [weakSelf failure:@"Network error."];
+    }];
 }
 
 - (IBAction)actionShowFromCache:(UIButton *)sender {
@@ -32,6 +50,14 @@
 
 - (IBAction)actionClearCache:(UIButton *)sender {
     
+}
+
+#pragma mark - Display
+
+- (void)failure:(NSString*)displayText {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Failure" message:displayText preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

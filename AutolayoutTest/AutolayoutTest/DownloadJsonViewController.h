@@ -10,4 +10,6 @@
 
 @interface DownloadJsonViewController : UIViewController
 
+- (void)failure:(NSString*)displayText;
+
 @end
