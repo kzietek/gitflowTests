@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P2e-pJ-7jo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -94,6 +94,7 @@
                             <outletCollection property="gestureRecognizers" destination="0ig-ti-CH3" appends="YES" id="8Gy-xi-O47"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="l2R-Nu-Mdj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="label1" destination="eaL-aL-mVS" id="ew1-u4-6iR"/>
@@ -111,6 +112,111 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="388" y="-144"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="nkD-5Z-sBB">
+            <objects>
+                <viewController id="8MF-aW-r96" customClass="DownloadJsonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WKi-x1-e9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nxh-8n-Lh0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yv4-zk-4US">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0dl-DX-l6g">
+                                <rect key="frame" x="16" y="28" width="288" height="194"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="ukg-V2-Yms"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8A-kL-b54">
+                                <rect key="frame" x="16" y="230" width="140" height="30"/>
+                                <state key="normal" title="Download &amp; show">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionDownloadAndShow:" destination="8MF-aW-r96" eventType="touchUpInside" id="Xra-sR-ufc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-kT-zVL">
+                                <rect key="frame" x="164" y="230" width="140" height="30"/>
+                                <state key="normal" title="Show from cache">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionShowFromCache:" destination="8MF-aW-r96" eventType="touchUpInside" id="3pG-C3-R46"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mr-0b-8bv">
+                                <rect key="frame" x="16" y="268" width="140" height="30"/>
+                                <state key="normal" title="Do best u can">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionDoYourBest:" destination="8MF-aW-r96" eventType="touchUpInside" id="fea-jU-pkJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27V-19-Pjb">
+                                <rect key="frame" x="164" y="268" width="140" height="30"/>
+                                <state key="normal" title="Clear cache">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionClearCache:" destination="8MF-aW-r96" eventType="touchUpInside" id="cKc-A1-XNx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NyJ-kT-zVL" firstAttribute="top" secondItem="0dl-DX-l6g" secondAttribute="bottom" constant="8" id="9vN-Cc-ecf"/>
+                            <constraint firstItem="6Mr-0b-8bv" firstAttribute="top" secondItem="r8A-kL-b54" secondAttribute="bottom" constant="8" id="BQl-hd-Rh8"/>
+                            <constraint firstItem="r8A-kL-b54" firstAttribute="top" secondItem="0dl-DX-l6g" secondAttribute="bottom" constant="8" id="BtP-BK-O6P"/>
+                            <constraint firstItem="NyJ-kT-zVL" firstAttribute="trailing" secondItem="Yv4-zk-4US" secondAttribute="trailingMargin" id="DZK-UC-0F0"/>
+                            <constraint firstItem="r8A-kL-b54" firstAttribute="leading" secondItem="Yv4-zk-4US" secondAttribute="leadingMargin" id="FrI-Ms-ZFB"/>
+                            <constraint firstItem="0dl-DX-l6g" firstAttribute="top" secondItem="WKi-x1-e9n" secondAttribute="bottom" constant="8" id="Gqk-S0-WoS"/>
+                            <constraint firstItem="NyJ-kT-zVL" firstAttribute="width" secondItem="r8A-kL-b54" secondAttribute="width" id="Kfd-4O-W4X"/>
+                            <constraint firstItem="27V-19-Pjb" firstAttribute="trailing" secondItem="Yv4-zk-4US" secondAttribute="trailingMargin" id="Mo0-nt-PAR"/>
+                            <constraint firstItem="6Mr-0b-8bv" firstAttribute="leading" secondItem="Yv4-zk-4US" secondAttribute="leadingMargin" id="Otr-M4-usf"/>
+                            <constraint firstItem="27V-19-Pjb" firstAttribute="leading" secondItem="6Mr-0b-8bv" secondAttribute="trailing" constant="8" id="RHj-Ug-aPv"/>
+                            <constraint firstItem="NyJ-kT-zVL" firstAttribute="leading" secondItem="r8A-kL-b54" secondAttribute="trailing" constant="8" id="SO9-gZ-6aq"/>
+                            <constraint firstItem="0dl-DX-l6g" firstAttribute="leading" secondItem="Yv4-zk-4US" secondAttribute="leadingMargin" id="lae-nH-waU"/>
+                            <constraint firstItem="27V-19-Pjb" firstAttribute="width" secondItem="6Mr-0b-8bv" secondAttribute="width" id="nfM-R6-xgm"/>
+                            <constraint firstItem="0dl-DX-l6g" firstAttribute="trailing" secondItem="Yv4-zk-4US" secondAttribute="trailingMargin" id="tDp-7W-Rou"/>
+                            <constraint firstItem="27V-19-Pjb" firstAttribute="top" secondItem="NyJ-kT-zVL" secondAttribute="bottom" constant="8" id="uW6-BP-FLb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="cf9-1N-nAz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="vImage" destination="0dl-DX-l6g" id="vfS-hS-X2E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHy-7p-816" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="531"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HMf-CT-uWk">
+            <objects>
+                <tabBarController id="P2e-pJ-7jo" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="s0O-4O-Wuy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8MF-aW-r96" kind="relationship" relationship="viewControllers" id="Xri-Jc-U4p"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="inB-cC-8sy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AwC-Tn-5PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-425" y="200"/>
         </scene>
     </scenes>
 </document>
