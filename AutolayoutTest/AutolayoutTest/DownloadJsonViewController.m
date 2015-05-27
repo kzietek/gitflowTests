@@ -34,7 +34,7 @@
         }
         
         Language *firstLang = [langs firstObject];
-        NSString *baseURL = @"http://langzee.jojomob.vot.pl/media/";
+        NSString *baseURL = @"http://langzee.jojomob.vot.pl/media/`";
         NSURL *imageUrl = [NSURL URLWithString:[baseURL stringByAppendingPathComponent:firstLang.languageImage]];
         [weakSelf.vImage sd_setImageWithURL:imageUrl];
         
