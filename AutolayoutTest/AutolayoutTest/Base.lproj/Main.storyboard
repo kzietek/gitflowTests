@@ -219,11 +219,11 @@
             </objects>
             <point key="canvasLocation" x="395" y="531"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="obE-hE-2Cp">
             <objects>
                 <navigationController id="bGb-2c-S0n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MdX-A1-jsh"/>
+                    <tabBarItem key="tabBarItem" title="Collection" id="MdX-A1-jsh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="68F-Zk-hCs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -237,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="395" y="1142"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="0t5-Yd-uWv">
             <objects>
-                <collectionViewController id="Siy-8O-lHY" sceneMemberID="viewController">
+                <collectionViewController id="Siy-8O-lHY" customClass="ResizableCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zhH-77-X5l">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,22 +251,40 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bfF-RQ-108">
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="bfF-RQ-108" customClass="ResizableCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-Cw-ClM">
+                                            <rect key="frame" x="4" y="14" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="eo8-Cw-ClM" secondAttribute="trailing" constant="-4" id="A8G-ET-SbQ"/>
+                                    <constraint firstItem="eo8-Cw-ClM" firstAttribute="leading" secondItem="bfF-RQ-108" secondAttribute="leadingMargin" constant="-4" id="R2l-nb-Qii"/>
+                                    <constraint firstItem="eo8-Cw-ClM" firstAttribute="top" secondItem="bfF-RQ-108" secondAttribute="topMargin" constant="6" id="RQK-8U-H5z"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="eo8-Cw-ClM" secondAttribute="bottom" constant="7" id="r0k-Hp-qNb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="vLabel" destination="eo8-Cw-ClM" id="cuL-Zb-AHt"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="Siy-8O-lHY" id="ghd-Tz-zyr"/>
-                            <outlet property="delegate" destination="Siy-8O-lHY" id="8fl-s2-v88"/>
+                            <outlet property="dataSource" destination="Siy-8O-lHY" id="8BN-S9-wTn"/>
+                            <outlet property="delegate" destination="Siy-8O-lHY" id="11o-WP-Tzt"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="OBX-XH-zu6"/>
+                    <tabBarItem key="tabBarItem" title="Collection" id="OBX-XH-zu6"/>
                     <navigationItem key="navigationItem" id="VlF-uG-NDD">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="q85-d4-eMk">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vgx-1d-ntC">
@@ -279,6 +297,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="zhH-77-X5l" id="ZUW-7M-vOQ"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyd-fm-4UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
