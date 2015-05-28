@@ -12,6 +12,9 @@
 		4737689D1B166D890016E362 /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737689C1B166D890016E362 /* ClassB.m */; };
 		4737689E1B166D890016E362 /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737689C1B166D890016E362 /* ClassB.m */; };
 		473768A01B166EB80016E362 /* MockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737689F1B166EB80016E362 /* MockTests.m */; };
+		473768A41B1784910016E362 /* TNResizableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 473768A31B1784910016E362 /* TNResizableTextView.m */; };
+		473768A71B1788D90016E362 /* ResizableCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473768A61B1788D80016E362 /* ResizableCollectionViewController.m */; };
+		473768AD1B178D8B0016E362 /* ResizableCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 473768AC1B178D8B0016E362 /* ResizableCollectionViewCell.m */; };
 		47719F551AFFDDC3001BBCCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47719F541AFFDDC3001BBCCF /* main.m */; };
 		47719F581AFFDDC3001BBCCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47719F571AFFDDC3001BBCCF /* AppDelegate.m */; };
 		47719F5B1AFFDDC3001BBCCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47719F5A1AFFDDC3001BBCCF /* ViewController.m */; };
@@ -43,6 +46,12 @@
 		4737689B1B166D890016E362 /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
 		4737689C1B166D890016E362 /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
 		4737689F1B166EB80016E362 /* MockTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTests.m; sourceTree = "<group>"; };
+		473768A21B1784910016E362 /* TNResizableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNResizableTextView.h; sourceTree = "<group>"; };
+		473768A31B1784910016E362 /* TNResizableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNResizableTextView.m; sourceTree = "<group>"; };
+		473768A51B1788D80016E362 /* ResizableCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizableCollectionViewController.h; sourceTree = "<group>"; };
+		473768A61B1788D80016E362 /* ResizableCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizableCollectionViewController.m; sourceTree = "<group>"; };
+		473768AB1B178D8B0016E362 /* ResizableCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizableCollectionViewCell.h; sourceTree = "<group>"; };
+		473768AC1B178D8B0016E362 /* ResizableCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizableCollectionViewCell.m; sourceTree = "<group>"; };
 		47719F4F1AFFDDC3001BBCCF /* AutolayoutTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutolayoutTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47719F531AFFDDC3001BBCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47719F541AFFDDC3001BBCCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,9 +104,38 @@
 			name = ClassesForMock;
 			sourceTree = "<group>";
 		};
+		473768A11B1784460016E362 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				473768A21B1784910016E362 /* TNResizableTextView.h */,
+				473768A31B1784910016E362 /* TNResizableTextView.m */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		473768A91B178D510016E362 /* ResizableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				473768AA1B178D630016E362 /* Cells */,
+				473768A51B1788D80016E362 /* ResizableCollectionViewController.h */,
+				473768A61B1788D80016E362 /* ResizableCollectionViewController.m */,
+			);
+			name = ResizableViewController;
+			sourceTree = "<group>";
+		};
+		473768AA1B178D630016E362 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				473768AB1B178D8B0016E362 /* ResizableCollectionViewCell.h */,
+				473768AC1B178D8B0016E362 /* ResizableCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		47719F461AFFDDC3001BBCCF = {
 			isa = PBXGroup;
 			children = (
+				473768A11B1784460016E362 /* Externals */,
 				47719F511AFFDDC3001BBCCF /* AutolayoutTest */,
 				47719F6B1AFFDDC4001BBCCF /* AutolayoutTestTests */,
 				47719F501AFFDDC3001BBCCF /* Products */,
@@ -125,6 +163,7 @@
 				47719F571AFFDDC3001BBCCF /* AppDelegate.m */,
 				47719F591AFFDDC3001BBCCF /* ViewController.h */,
 				47719F5A1AFFDDC3001BBCCF /* ViewController.m */,
+				473768A91B178D510016E362 /* ResizableViewController */,
 				477F57891B07C5B30077E447 /* DownloadJsonViewController.h */,
 				477F578A1B07C5B30077E447 /* DownloadJsonViewController.m */,
 				47719F5C1AFFDDC3001BBCCF /* Main.storyboard */,
@@ -336,7 +375,10 @@
 				477F57901B07CAF10077E447 /* Language.m in Sources */,
 				477F578B1B07C5B30077E447 /* DownloadJsonViewController.m in Sources */,
 				47719F5B1AFFDDC3001BBCCF /* ViewController.m in Sources */,
+				473768A41B1784910016E362 /* TNResizableTextView.m in Sources */,
+				473768A71B1788D90016E362 /* ResizableCollectionViewController.m in Sources */,
 				4737689D1B166D890016E362 /* ClassB.m in Sources */,
+				473768AD1B178D8B0016E362 /* ResizableCollectionViewCell.m in Sources */,
 				477F57941B07CD5C0077E447 /* LangzeeAPI.m in Sources */,
 				47719F581AFFDDC3001BBCCF /* AppDelegate.m in Sources */,
 				473768991B166D7A0016E362 /* ClassA.m in Sources */,
