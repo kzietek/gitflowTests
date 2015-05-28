@@ -93,8 +93,7 @@ static NSString * const reuseIdentifier = @"cell1";
     [fakeCell setNeedsLayout];
     [fakeCell layoutIfNeeded];
     
-    CGSize outputSize = [fakeCell systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
-    outputSize;
+    CGSize outputSize = [fakeCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return outputSize;//CGSizeMake(baseSize * (indexPath.row + 1), baseSize);
 }
 
@@ -107,7 +106,7 @@ static NSString * const reuseIdentifier = @"cell1";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return 3;
+    return 6;
 }
 
 - (NSString *)stringForIndex:(NSInteger)index {
@@ -116,6 +115,7 @@ static NSString * const reuseIdentifier = @"cell1";
     for (NSInteger i = 0; i < index; i++) {
         cellText = [NSString stringWithFormat:@"%@ %@",cellText,text];
     }
+    
     return cellText;
 }
 
@@ -123,7 +123,7 @@ static NSString * const reuseIdentifier = @"cell1";
     ResizableCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.vLabel.text = [self stringForIndex:indexPath.row];
-    [cell layoutSubviews];
+    [cell setNeedsLayout];
     
     return cell;
 }

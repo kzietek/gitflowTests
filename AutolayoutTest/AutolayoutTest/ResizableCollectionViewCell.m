@@ -12,6 +12,7 @@
 @interface ResizableCollectionViewCell ()
 
 @property (nonatomic, strong) UILabel *internalLabel;
+@property (nonatomic, assign) BOOL didSetupConstraints;
 
 @end
 
@@ -22,11 +23,22 @@
     if (self) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Placeholder";
+        label.numberOfLines = 0;
         label.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:label];
+        [label sizeToFit];
         [label autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(6, 6, 6, 6)];
+        [label autoSetDimension:ALDimensionWidth toSize:100];
+
+        [UIView autoSetPriority:UILayoutPriorityRequired forConstraints:^{
+            [label autoSetContentCompressionResistancePriorityForAxis:ALAxisVertical];
+        }];
+        
+//        [label autoSetDimension:ALDimensionHeight toSize:21];
         _internalLabel = label;
         _vLabel = _internalLabel;
+        
+        _didSetupConstraints = NO;
     }
     return self;
 }
