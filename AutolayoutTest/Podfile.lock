@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONModel (1.1.0)
+  - OCMock (3.1.2)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -28,11 +29,13 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - JSONModel
+  - OCMock
   - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.37.1

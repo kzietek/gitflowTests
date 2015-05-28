@@ -1,3 +1,4 @@
 pod 'JSONModel'
 pod 'AFNetworking'
 pod 'SDWebImage'
+pod 'OCMock'
