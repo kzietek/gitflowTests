@@ -82,7 +82,20 @@ static NSString * const reuseIdentifier = @"cell1";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     static CGFloat baseSize = 50;
-    return CGSizeMake(baseSize * (indexPath.row + 1), baseSize);
+    
+    ResizableCollectionViewCell *fakeCell = [ResizableCollectionViewCell new];
+    CGRect fakeFrame = CGRectMake(0, 0, baseSize, baseSize);
+    fakeCell.frame = fakeFrame;
+    fakeCell.bounds = fakeFrame;
+    
+    fakeCell.vLabel.text = [self stringForIndex:indexPath.row];
+    
+    [fakeCell setNeedsLayout];
+    [fakeCell layoutIfNeeded];
+    
+    CGSize outputSize = [fakeCell systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
+    outputSize;
+    return outputSize;//CGSizeMake(baseSize * (indexPath.row + 1), baseSize);
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -97,16 +110,19 @@ static NSString * const reuseIdentifier = @"cell1";
     return 3;
 }
 
+- (NSString *)stringForIndex:(NSInteger)index {
+    NSString *text = [NSString stringWithFormat:@"Label%ld",(long)index];
+    NSString *cellText = text;
+    for (NSInteger i = 0; i < index; i++) {
+        cellText = [NSString stringWithFormat:@"%@ %@",cellText,text];
+    }
+    return cellText;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ResizableCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    NSString *text = [NSString stringWithFormat:@"Label%ld",(long)indexPath.row];
-    NSString *cellText = text;
-    for (NSInteger i = 0; i < indexPath.row; i++) {
-        cellText = [NSString stringWithFormat:@"%@ %@",cellText,text];
-    }
-    
-    cell.vLabel.text = cellText;
+    cell.vLabel.text = [self stringForIndex:indexPath.row];
     [cell layoutSubviews];
     
     return cell;
